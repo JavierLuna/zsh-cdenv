@@ -3,7 +3,9 @@
 
 function cd {
     builtin cd "$@"
-    POSSIBLE_ENV_NAMES=( "env" "ENV" "venv" "VENV" ) # In a future version this could be customizable
+    if [ ! -z "$POSSIBLE_ENV_NAMES" ]; then
+        POSSIBLE_ENV_NAMES=( "env" "ENV" "venv" "VENV" ) # In a future version this could be customizable
+    fi
     REPO=$(git rev-parse --show-toplevel 2> /dev/null)
     IS_IN_REPO=$?
 

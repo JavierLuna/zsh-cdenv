@@ -7,12 +7,17 @@ Whenever you cd in a git repository, it will check if there's a virtual environm
 
 In addition, If you leave the repository, the environment will be deactivated.
 
-Current supported environment names:
+Default supported environment names:
 
 * `env`
 * `ENV`
 * `venv`
 * `VENV`
+
+You can override the `POSSIBLE_ENV_NAMES` environmental variable to customize the plugin with your own names, like (`.zshrc`):
+```
+export POSSIBLE_ENV_NAMES=( "test" )
+```
 
 ## Installation
 
@@ -27,5 +32,4 @@ antigen bundle JavierLuna/zsh-cdenv
 There are a few limitations which are known and will be addresed as soon as I can:
 
 * If you are in a repository A and you `cd` into a different repository B, the plugin will not recognize you've changed repos and will still use A's virtual env
-* Environment names are static. It would be nice for it to be customizable.
 * Virtualenv-wrapper and pipenv not supported.
