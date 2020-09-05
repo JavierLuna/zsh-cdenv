@@ -27,9 +27,3 @@ Using antigen, add this to your `.antigenrc` (or your `.zshrc`) file:
 antigen bundle JavierLuna/zsh-cdenv
 ```
 
-## Current limitations
-
-There are a few limitations which are known and will be addresed as soon as I can:
-
-* If you are in a repository A and you `cd` into a different repository B, the plugin will not recognize you've changed repos and will still use A's virtual env
-* Virtualenv-wrapper and pipenv not supported.
